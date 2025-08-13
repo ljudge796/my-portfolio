@@ -1,221 +1,65 @@
-!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio</title>
-<!-- Use Tailwind CSS via CDN for styling -->
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-/* This hides all sections by default */
-.page-section {
-display: none;
-}
-/* This shows only the section with the 'active' class */
-.page-section.active {
-display: block;
-}
-
-/* This is the base style for our navigation buttons */
-.nav-button {
-position: relative;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-padding: 0.5rem;
-margin-bottom: 0.5rem;
-margin-right: 0.5rem;
-overflow: hidden;
-font-size: 0.875rem;
-font-weight: 500;
-color: rgb(17 24 39);
-border-radius: 0.5rem;
-background-image: linear-gradient(to right, rgb(147 51 234) 0%, rgb(59 130 246) 100%);
-}
-.nav-button-content {
-position: relative;
-padding: 0.625rem 1.25rem;
-transition-property: all;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-transition-duration: 75ms;
-background-color: white;
-border-radius: 0.375rem;
-}
-.dark .nav-button-content {
-background-color: rgb(17 24 39);
-}
-.nav-button:hover .nav-button-content {
-background-color: transparent;
-}
-.nav-button.active {
-color: white; /* Active button color */
-}
-.nav-button.active .nav-button-content {
-background-color: transparent;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liam Judge - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 font-sans antialiased">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans">
 
-<!-- Header Section -->
-<header class="fixed w-full top-0 z-50 bg-white/30 backdrop-blur-lg shadow-md dark:bg-gray-900/30">
-<nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-<h1 class="text-2xl font-bold text-gray-900 dark:text-white">Liam Judge</h1>
-<div class="space-x-4 flex">
-<button id="home-button" class="nav-button">
-<span class="nav-button-content">
-Home
-</span>
-</button>
-<button id="contact-button" class="nav-button">
-<span class="nav-button-content">
-Contact
-</span>
-</button>
-</div>
-</nav>
-</header>
+  <!-- Navigation -->
+  <nav class="flex justify-center space-x-4 p-6 bg-white dark:bg-gray-800 shadow">
+    <button onclick="scrollToSection('home')" class="nav-button">Home</button>
+    <button onclick="scrollToSection('projects')" class="nav-button">Projects</button>
+    <button onclick="scrollToSection('contact')" class="nav-button">Contact</button>
+  </nav>
 
-<!-- Main Content Area -->
-<main class="pt-16">
-<!-- Home Section -->
-<div id="home-section" class="page-section container mx-auto px-4 py-8">
-<!-- Hero Section -->
-<section class="text-center mb-16">
-<h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
-Hi, I'm Liam
-</h2>
-<!-- Hero Section -->
-<section class="text-center mb-16">
-<h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
-Hi, I'm Your Name
-</h2>
-<img 
-  src="profile.jpg" 
-  onerror="this.onerror=null; this.src='https://placehold.co/400x400?text=Liam+Judge';" 
-  alt="Portrait of Liam Judge" 
-  class="w-32 h-32 rounded-full mx-auto mb-4"
-/>
-A passionate developer building web applications with modern technologies. Welcome to my portfolio!
-</p>
-</section>
+  <!-- Hero Section -->
+  <section id="home" class="text-center mb-16">
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+      Hi, I'm Liam
+    </h2>
+    <img 
+      src="profile.jpg" 
+      onerror="this.onerror=null; this.src='https://placehold.co/400x400?text=Liam+Judge';" 
+      alt="Portrait of Liam Judge" 
+      class="w-32 h-32 rounded-full mx-auto mb-4"
+    >
+    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+      A passionate developer building modern, responsive web applications. Welcome to my portfolio!
+    </p>
+  </section>
 
-<!-- Projects Section -->
-<section>
-<h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Featured Projects</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Project Card 1 -->
-<div class="relative overflow-hidden group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-<img src="https://placehold.co/800x600/1e293b/cbd5e1?text=Project+Alpha" alt="Project Alpha" class="w-full h-48 object-cover object-center transition-all duration-300 group-hover:scale-110" />
-<div class="p-6">
-<h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Project Alpha</h4>
-<p class="text-gray-600 dark:text-gray-400 text-sm mb-4">A brief description of Project Alpha...</p>
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">HTML</span>
-<span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">CSS</span>
-<span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">JavaScript</span>
-</div>
-<div class="flex space-x-4">
-<a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 flex items-center">Live Demo</a>
-<a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 flex items-center">GitHub</a>
-</div>
-</div>
-</div>
-<!-- Add more project cards here -->
-</div>
-</section>
-</div>
+  <!-- Projects Section -->
+  <section id="projects" class="px-6 sm:px-12 lg:px-24 mb-16">
+    <h3 class="text-3xl font-bold text-center mb-8">Projects</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+        <h4 class="text-xl font-semibold mb-2">Project Alpha</h4>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">A web app to manage tasks efficiently.</p>
+        <a href="#" class="text-blue-500 hover:underline">View Project</a>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+        <h4 class="text-xl font-semibold mb-2">Project Beta</h4>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">An AI-powered chatbot for customer support.</p>
+        <a href="#" class="text-blue-500 hover:underline">View Project</a>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+        <h4 class="text-xl font-semibold mb-2">Project Gamma</h4>
+        <p class="text-gray-
 
-<!-- Contact Section -->
-<div id="contact-section" class="page-section container mx-auto px-4 py-8 pt-24 min-h-screen">
-<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-Get in Touch
-</h2>
-<div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-<p class="text-gray-600 dark:text-gray-400 mb-6 text-center">
-I'm always open to new opportunities and collaborations. Feel free to reach out!
-</p>
-<div class="space-y-4">
-<div class="flex items-center space-x-4 text-gray-800 dark:text-gray-200">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-<a href="mailto:your.email@example.com" class="hover:underline">
-ljudge2025@gmail.com
-</a>
-</div>
-<div class="flex items-center space-x-4 text-gray-800 dark:text-gray-200">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.5 0 4-2.5 4-4a3.5 3.5 0 0 0-1-2.5c.5-1 1.4-2.5 0-4.5 0 0-1.2-.5-4 1.5a12 12 0 0 0-6 0c-2.8-2-4-1.5-4-1.5a3.5 3.5 0 0 0 0 4.5c-.7 1.2-1.2 2.5-1 4a4.8 4.8 0 0 0-1 3.5v4"/><path d="M12 18h.01"/></svg>
-<a href="#" target="_blank" rel="noopener noreferrer" class="hover:underline">
-github.com/ljudge796
-</a>
-</div>
-<div class="flex items-center space-x-4 text-gray-800 dark:text-gray-200">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-<a href="#" target="_blank" rel="noopener noreferrer" class="hover:underline">
-linkedin.com/in/liam-judge-72047237a/
-</a>
-</div>
-</div>
-</div>
-</div>
 
-</main>
 
-<!-- Footer Section -->
-<footer class="bg-gray-100 dark:bg-gray-800 py-6 mt-12">
-<div class="container mx-auto px-4 text-center">
-<p class="text-gray-600 dark:text-gray-400">© 20245 Liam Judge. All rights reserved.</p>
-<div class="mt-4 flex justify-center space-x-4">
-<a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.5 0 4-2.5 4-4a3.5 3.5 0 0 0-1-2.5c.5-1 1.4-2.5 0-4.5 0 0-1.2-.5-4 1.5a12 12 0 0 0-6 0c-2.8-2-4-1.5-4-1.5a3.5 3.5 0 0 0 0 4.5c-.7 1.2-1.2 2.5-1 4a4.8 4.8 0 0 0-1 3.5v4"/><path d="M12 18h.01"/></svg>
-</a>
-<a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-</a>
-<a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 11-11.4 10 0 0-3.3 1-4.6 2 0 0 6.6-4.6 9.2-11.7A8.2 8.2 0 0 0 22 4Z"/></svg>
-</a>
-</div>
-</div>
-</footer>
 
-<!-- JavaScript for interactivity -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-const homeButton = document.getElementById('home-button');
-const contactButton = document.getElementById('contact-button');
-const homeSection = document.getElementById('home-section');
-const contactSection = document.getElementById('contact-section');
 
-// This function handles showing the correct section and styling the active button
-function showSection(sectionToShow, buttonToActivate) {
-// First, hide all sections and deactivate all buttons
-document.querySelectorAll('.page-section').forEach(section => {
-section.classList.remove('active');
-});
-document.querySelectorAll('.nav-button').forEach(button => {
-button.classList.remove('active');
-});
 
-// Then, show the selected section and activate its button
-sectionToShow.classList.add('active');
-buttonToActivate.classList.add('active');
-}
 
-// Set the initial active state to the home page
-showSection(homeSection, homeButton);
 
-// Add event listeners to the navigation buttons
-homeButton.addEventListener('click', () => {
-showSection(homeSection, homeButton);
-});
 
-contactButton.addEventListener('click', () => {
-showSection(contactSection, contactButton);
-});
-});
-</script>
-</body>
-</html>
+
+
+
 
              
           
