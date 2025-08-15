@@ -1,65 +1,204 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Liam Judge - Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liam</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins for a modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons for clean icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Custom CSS File -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans">
+<body class="antialiased">
 
-  <!-- Navigation -->
-  <nav class="flex justify-center space-x-4 p-6 bg-white dark:bg-gray-800 shadow">
-    <button onclick="scrollToSection('home')" class="nav-button">Home</button>
-    <button onclick="scrollToSection('projects')" class="nav-button">Projects</button>
-    <button onclick="scrollToSection('contact')" class="nav-button">Contact</button>
-  </nav>
+    <!-- Header & Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gray-900/80 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">Liam.dev</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-sky-400 transition-colors">Home</a>
+                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
+                <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="#home" class="block py-2 px-6 text-center hover:bg-gray-700">Home</a>
+            <a href="#about" class="block py-2 px-6 text-center hover:bg-gray-700">About</a>
+            <a href="#projects" class="block py-2 px-6 text-center hover:bg-gray-700">Projects</a>
+            <a href="#contact" class="block py-2 px-6 text-center hover:bg-gray-700">Contact</a>
+        </div>
+    </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="text-center mb-16">
-    <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
-      Hi, I'm Liam
-    </h2>
-    <img 
-      src="profile.jpg" 
-      onerror="this.onerror=null; this.src='https://placehold.co/400x400?text=Liam+Judge';" 
-      alt="Portrait of Liam Judge" 
-      class="w-32 h-32 rounded-full mx-auto mb-4"
-    >
-    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-      A passionate developer building modern, responsive web applications. Welcome to my portfolio!
-    </p>
-  </section>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center bg-gray-900 pt-20">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">Hi, I'm Liam</h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-6">
+                        A <span id="typing-text" class="accent-color font-semibold"></span><span class="typing-cursor"></span>
+                    </p>
+                    <p class="text-gray-400 mb-8">Welcome to my portfolio! I'm currently honing my skills as a full-stack engineer through Codecademy.</p>
+                    <a href="#projects" class="bg-accent-color text-white font-bold py-3 px-8 rounded-full hover:bg-sky-500 transition-transform transform hover:scale-105 inline-block">View My Work</a>
+                </div>
+                <div class="md:w-1/3">
+                    
+                    <img src="profile.jpeg" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/400x400/1F2937/E5E7EB?text=Liam';" 
+                         alt="Liam's Profile Picture" 
+                         class="rounded-full shadow-2xl mx-auto w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-gray-700">
+                </div>
+            </div>
+        </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="px-6 sm:px-12 lg:px-24 mb-16">
-    <h3 class="text-3xl font-bold text-center mb-8">Projects</h3>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <h4 class="text-xl font-semibold mb-2">Project Alpha</h4>
-        <p class="text-gray-600 dark:text-gray-400 mb-4">A web app to manage tasks efficiently.</p>
-        <a href="#" class="text-blue-500 hover:underline">View Project</a>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <h4 class="text-xl font-semibold mb-2">Project Beta</h4>
-        <p class="text-gray-600 dark:text-gray-400 mb-4">An AI-powered chatbot for customer support.</p>
-        <a href="#" class="text-blue-500 hover:underline">View Project</a>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <h4 class="text-xl font-semibold mb-2">Project Gamma</h4>
-        <p class="text-gray-
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-2/3 text-lg text-gray-300 space-y-4">
+                        <p>
+                            I'm a developer with a passion for creating clean, modern, and responsive web applications. My journey into code began with a curiosity for how things work on the web, which quickly evolved into a full-fledged dedication to learning and building.
+                        </p>
+                        <p>
+                            Through my full-stack engineer course, I'm gaining hands-on experience with the entire development lifecycle, from front-end design to back-end logic. I enjoy solving problems and turning complex ideas into beautiful, intuitive digital experiences.
+                        </p>
+                        <p>Here are a few technologies I've been working with recently:</p>
+                        <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4 text-gray-400">
+                            <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 mr-2 accent-color"></i>HTML</li>
+                            <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 mr-2 accent-color"></i>JavaScript</li>
+                            <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 mr-2 accent-color"></i>Algorithms</li>
+                            <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 mr-2 accent-color"></i>CSS</li>
+                            <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 mr-2 accent-color"></i>Git & GitHub</li>
+                            <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 mr-2 accent-color"></i>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/3">
+                        <img src="setup.png" alt="Coding Setup" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">My Projects</h2>
+                <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Here are some of the projects I've worked on during my Codecademy course. Feel free to explore the code on GitHub!</p>
+                
+                <!-- Project Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Project Card 1: Piano Keys -->
+                    <div class="project-card bg-gray-800 rounded-lg overflow-hidden shadow-lg group">
+                        <div class="relative">
+                            <img src="project1.jpg" alt="Piano Keys Project" class="w-full h-48 object-cover transition-transform duration-300">
+                            <div class="project-overlay absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                                <a href="https://github.com/ljudge796/Full-Stack-Engineer-Piano-Keys-" target="_blank" class="text-white mx-2 p-2 border border-white rounded-full hover:bg-white hover:text-black transition-colors"><i data-feather="github"></i></a>
+                                <a href="#" target="_blank" class="text-white mx-2 p-2 border border-white rounded-full hover:bg-white hover:text-black transition-colors"><i data-feather="external-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-white">Interactive Piano Keys</h3>
+                            <p class="text-gray-400 mb-4">A virtual piano where users can play notes by clicking keys. This project focuses on DOM manipulation and event handling in vanilla JavaScript.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-sky-400 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML</span>
+                                <span class="bg-gray-700 text-sky-400 text-xs font-semibold px-2.5 py-0.5 rounded-full">CSS</span>
+                                <span class="bg-gray-700 text-sky-400 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Project Card 2: Form a Story -->
+                    <div class="project-card bg-gray-800 rounded-lg overflow-hidden shadow-lg group">
+                        <div class="relative">
+                            <img src="project2.jpg" alt="Form a Story Project" class="w-full h-48 object-cover transition-transform duration-300">
+                            <div class="project-overlay absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                                <a href="https://github.com/ljudge796/Full-Stack-Engineer-Form-a-Story-" target="_blank" class="text-white mx-2 p-2 border border-white rounded-full hover:bg-white hover:text-black transition-colors"><i data-feather="github"></i></a>
+                                <a href="#" target="_blank" class="text-white mx-2 p-2 border border-white rounded-full hover:bg-white hover:text-black transition-colors"><i data-feather="external-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-white">Mad Libs Story Generator</h3>
+                            <p class="text-gray-400 mb-4">A classic "Mad Libs" style game where users fill out a form with various words to generate a funny and unpredictable story. This demonstrates proficiency with HTML forms.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-sky-400 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML</span>
+                                <span class="bg-gray-700 text-sky-400 text-xs font-semibold px-2.5 py-0.5 rounded-full">CSS</span>
+                                <span class="bg-gray-700 text-sky-400 text-xs font-semibold px-2.5 py-0.5 rounded-full">Forms</span>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Project Card 3: Mysterious Organism -->
+                    <div class="project-card bg-gray-800 rounded-lg overflow-hidden shadow-lg group">
+                        <div class="relative">
+                            <img src="project3.jpg" alt="Mysterious Organism Project" class="w-full h-48 object-cover transition-transform duration-300">
+                            <div class="project-overlay absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                                <a href="https://github.com/ljudge796/Full-Stack-Engineer-Challenge-Project-Mysterious-Organism-" target="_blank" class="text-white mx-2 p-2 border border-white rounded-full hover:bg-white hover:text-black transition-colors"><i data-feather="github"></i></a>
+                                <a href="#" target="_blank" class="text-white mx-2 p-2 border border-white rounded-full hover:bg-white hover:text-black transition-colors"><i data-feather="external-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-white">P. aequor Organism Simulator</h3>
+                            <p class="text-gray-400 mb-4">A script that generates virtual DNA strands. It includes methods to simulate mutations, compare DNA, and determine an organism's likelihood of survival.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-sky-400 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                                <span class="bg-gray-700 text-sky-400 text-xs font-semibold px-2.5 py-0.5 rounded-full">Algorithms</span>
+                                <span class="bg-gray-700 text-sky-400 text-xs font-semibold px-2.5 py-0.5 rounded-full">Factory Functions</span>
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+        </section>
 
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-gray-400 mb-8 max-w-xl mx-auto">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out!</p>
+                <a href="mailto:your.email@example.com" class="bg-accent-color text-white font-bold py-3 px-8 rounded-full hover:bg-sky-500 transition-transform transform hover:scale-105 inline-block">Say Hello</a>
+                <div class="flex justify-center space-x-6 mt-10">
+                    <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors"><i data-feather="github" class="w-8 h-8"></i></a>
+                    <a href="https://www.linkedin.com/in/liam-judge-72047237a/" class="text-gray-400 hover:text-sky-400 transition-colors"><i data-feather="linkedin" class="w-8 h-8"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors"><i data-feather="twitter" class="w-8 h-8"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 Liam.dev. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Designed & Built by Liam</p>
+        </div>
+    </footer>
 
+    <!-- Scroll to Top Button -->
+    <button id="to-top-button" title="Go To Top"
+        class="hidden fixed z-50 bottom-10 right-10 p-3 border-2 border-sky-400 rounded-full bg-gray-800/50 text-sky-400 hover:bg-sky-400 hover:text-white transition-all duration-300">
+        <i data-feather="arrow-up" class="w-6 h-6"></i>
+    </button>
 
+    <!--  Custom JS File -->
+    <script src="script.js"></script>
 
-
-
-
-
-             
-          
+</body>
+</html>
